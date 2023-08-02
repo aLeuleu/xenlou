@@ -3,6 +3,7 @@
 
 #include "SDL.h"
 #include "SDL_image.h"
+#include "TextureManager.hpp"
 #include <iostream>
 
 class Game
