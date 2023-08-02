@@ -20,7 +20,7 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 		isRunning = true;
 	}
 
-	SDL_Surface *tmpSurface = IMG_Load("assets/player.png");
+	SDL_Surface *tmpSurface = IMG_Load("/Users/aurelienlevra/CLionProjects/xenlou/assets/player.png");
 	playerTex = SDL_CreateTextureFromSurface(renderer, tmpSurface);
 	SDL_FreeSurface(tmpSurface);
 }
