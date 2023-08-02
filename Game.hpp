@@ -19,7 +19,6 @@ public:
 	void clean();
 
 	bool running() { return isRunning; }
-
 	private:
 		bool isRunning = false;
 		SDL_Window *window;

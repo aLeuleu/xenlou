@@ -42,6 +42,8 @@ void Game::update() {
 	destR.h = 32;
 	destR.w = 32;
 	destR.x ++;
+	if (destR.x > 800)
+		destR.x = 0;
 
 }
 
