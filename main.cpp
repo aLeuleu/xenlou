@@ -1,27 +1,21 @@
-#include <algorithm>
-#include <iostream>
-
+#include "Game.hpp"
 #include <SDL.h>
 
 #define SCREEN_WIDTH    800
 #define SCREEN_HEIGHT   600
-SDL_Rect create_rect();
+
+Game *game = new Game();
 
 int main(int argc, char* argv[]) {
-	// Unused argc, argv
-	(void) argc;
-	(void) argv;
+	game->init("Game Window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, false);
 
-	SDL_Init(SDL_INIT_VIDEO);
-	SDL_Window* window = SDL_CreateWindow("xenlou",
-		SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH,
-		SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+	while (game->running()) {
+		game->handleEvents();
+		game->update();
+		game->render();
+	}
 
-	SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, 0);
-	SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-	SDL_RenderClear(renderer);
-	SDL_RenderPresent(renderer);
-	SDL_Delay(3000);
+	game->clean();
 
-	return (0);
+	return 0;
 }

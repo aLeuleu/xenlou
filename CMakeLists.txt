@@ -3,7 +3,7 @@ project(xenlou)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(xenlou main.cpp)
+add_executable(xenlou main.cpp Game.cpp)
 
 
 # Find the SDL2 package
