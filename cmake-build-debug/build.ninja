@@ -67,6 +67,13 @@ build CMakeFiles/xenlou.dir/TextureManager.cpp.o: CXX_COMPILER__xenlou_Debug /Us
   OBJECT_DIR = CMakeFiles/xenlou.dir
   OBJECT_FILE_DIR = CMakeFiles/xenlou.dir
 
+build CMakeFiles/xenlou.dir/GameObject.cpp.o: CXX_COMPILER__xenlou_Debug /Users/aurelienlevra/CLionProjects/xenlou/GameObject.cpp || cmake_object_order_depends_target_xenlou
+  DEP_FILE = CMakeFiles/xenlou.dir/GameObject.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/opt/homebrew/Cellar/sdl2/2.28.1/include/SDL2 -I/opt/homebrew/Cellar/sdl2_image/2.6.3_1/include/SDL2 -I/opt/homebrew/Cellar/libpng/1.6.40/include/libpng16
+  OBJECT_DIR = CMakeFiles/xenlou.dir
+  OBJECT_FILE_DIR = CMakeFiles/xenlou.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target xenlou
@@ -75,7 +82,7 @@ build CMakeFiles/xenlou.dir/TextureManager.cpp.o: CXX_COMPILER__xenlou_Debug /Us
 #############################################
 # Link the executable xenlou
 
-build xenlou: CXX_EXECUTABLE_LINKER__xenlou_Debug CMakeFiles/xenlou.dir/main.cpp.o CMakeFiles/xenlou.dir/Game.cpp.o CMakeFiles/xenlou.dir/TextureManager.cpp.o | /opt/homebrew/Cellar/sdl2/2.28.1//lib/libSDL2.dylib /opt/homebrew/Cellar/sdl2_image/2.6.3_1/lib/libSDL2_image.dylib /opt/homebrew/Cellar/libpng/1.6.40/lib/libpng16.dylib
+build xenlou: CXX_EXECUTABLE_LINKER__xenlou_Debug CMakeFiles/xenlou.dir/main.cpp.o CMakeFiles/xenlou.dir/Game.cpp.o CMakeFiles/xenlou.dir/TextureManager.cpp.o CMakeFiles/xenlou.dir/GameObject.cpp.o | /opt/homebrew/Cellar/sdl2/2.28.1//lib/libSDL2.dylib /opt/homebrew/Cellar/sdl2_image/2.6.3_1/lib/libSDL2_image.dylib /opt/homebrew/Cellar/libpng/1.6.40/lib/libpng16.dylib
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk
   LINK_LIBRARIES = /opt/homebrew/Cellar/sdl2/2.28.1//lib/libSDL2.dylib  /opt/homebrew/Cellar/sdl2_image/2.6.3_1/lib/libSDL2_image.dylib  /opt/homebrew/Cellar/libpng/1.6.40/lib/libpng16.dylib
   OBJECT_DIR = CMakeFiles/xenlou.dir

@@ -1,7 +1,8 @@
 #include "Game.hpp"
+#include "GameObject.hpp"
 
-SDL_Texture *playerTex;
-SDL_Rect srcR, destR;
+GameObject* player;
+GameObject* enemy;
 
 Game::Game() {}
 Game::~Game() {}
@@ -14,15 +15,14 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
 		window = SDL_CreateWindow(title, xpos, ypos, width, height, flags);
-		renderer = SDL_CreateRenderer(window, -1, 0);
+		renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 		if (renderer)
 			SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 
 		isRunning = true;
 	}
-
-	playerTex = TextureManager::LoadTexture("/Users/aurelienlevra/CLionProjects/xenlou/assets/player.png", renderer);
-
+	player = new GameObject("/Users/aurelienlevra/CLionProjects/xenlou/assets/player.png", renderer, 0, 0);
+	enemy = new GameObject("/Users/aurelienlevra/CLionProjects/xenlou/assets/enemy.png", renderer, 50, 50);
 }
 
 void Game::handleEvents() {
@@ -38,17 +38,15 @@ void Game::handleEvents() {
 }
 
 void Game::update() {
-	destR.h = 32;
-	destR.w = 32;
-	destR.x ++;
-	if (destR.x > 800)
-		destR.x = 0;
-
+	player->Update();
+	enemy->Update();
 }
 
 void Game::render() {
 	SDL_RenderClear(renderer);
-	SDL_RenderCopy(renderer, playerTex, NULL, &destR);
+
+	player->Render();
+	enemy->Render();
 	SDL_RenderPresent(renderer);
 }
 
