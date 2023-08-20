@@ -3,7 +3,7 @@ project(xenlou)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(xenlou main.cpp Game.cpp TextureManager.hpp TextureManager.cpp GameObject.hpp GameObject.cpp)
+add_executable(xenlou main.cpp Game.cpp TextureManager.hpp TextureManager.cpp GameObject.hpp GameObject.cpp Map.hpp Map.cpp Tile.hpp Tile.cpp unused_for_now/color.h unused_for_now/color.cpp colors.h)
 
 set(SDL2_IMAGE_DIR "/opt/homebrew/Cellar/sdl2_image/2.6.3_1")
 set(SDL2_DIR "/opt/homebrew/Cellar/sdl2/2.28.1/")
