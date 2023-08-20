@@ -28,7 +28,7 @@ public:
 		bool isRunning = false;
 		SDL_Window *window;
 		SDL_Renderer *renderer;
-		unsigned int _screenWidth = 1500;
+		unsigned int _screenWidth = 1700;
 		unsigned int _screenHeight = 1000;
 };
 

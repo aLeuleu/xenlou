@@ -8,7 +8,7 @@ int main(int argc, char* argv[]) {
 	const int frameDelay = 1000 / FPS;
 	Uint32 frameStart;
 	int frameTime;
-	game->init("Game Window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, false);
+	game->init("Game Window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, true);
 
 	while (game->running()) {
 		frameStart = SDL_GetTicks();

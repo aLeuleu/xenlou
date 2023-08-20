@@ -3,8 +3,8 @@
 #include "colors.h"
 
 enum types {
-	grass,
-	water
+	alive,
+	dead
 };
 
 
@@ -18,10 +18,11 @@ public:
 	void setPos(unsigned int x, unsigned int y);
 	void setType(int i);
 	types getType();
+	void update();
+	void switchState();
 private:
 	SDL_Point	_pos;
-	int			_tileSize = 5;
-	int	_type = grass;
-
-	void drawSquare(SDL_Renderer *renderer) const;
+	int			_tileSize = 2;
+	int	_type = alive;
+	bool 		_switchState = false;
 };

@@ -10,7 +10,7 @@ public:
 	Map(unsigned int width, unsigned int height, Game *game);
 	~Map();
 	void render();
-
+	void update();
 private:
 	bool 			_initialized = false;
 	unsigned int 	_width = 0;

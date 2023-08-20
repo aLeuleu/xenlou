@@ -2,8 +2,6 @@
 #include "GameObject.hpp"
 #include "Map.hpp"
 
-GameObject* player;
-GameObject*	enemy;
 Map* 		map;
 
 Game::Game() {}
@@ -23,9 +21,7 @@ void Game::init(const char *title, int xpos, int ypos, bool fullscreen) {
 
 		isRunning = true;
 	}
-	player = new GameObject("/Users/aurelienlevra/CLionProjects/xenlou/assets/player.png", renderer, 0, 0);
-	enemy = new GameObject("/Users/aurelienlevra/CLionProjects/xenlou/assets/enemy.png", renderer, 50, 50);
-	map = new Map(1000, 1000, this);
+	map = new Map(1000, 800, this);
 }
 
 void Game::handleEvents() {
@@ -41,14 +37,11 @@ void Game::handleEvents() {
 }
 
 void Game::update() {
-	player->Update();
-	enemy->Update();
+	map->update();
 }
 
 void Game::render() {
 	SDL_RenderClear(renderer);
-	player->Render();
-	enemy->Render();
 	map->render();
 	SDL_SetRenderDrawColor(renderer, WHITE);
 	SDL_RenderPresent(renderer);

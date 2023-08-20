@@ -15,7 +15,7 @@ Tile::Tile(int x, int y) {
 }
 
 void Tile::render(SDL_Renderer *renderer) {
-	SDL_SetRenderDrawColor(renderer, RED);
+	SDL_SetRenderDrawColor(renderer, BLACK);
 
 	SDL_Rect _rect;
 	_rect.x = _pos.x * _tileSize;
@@ -27,19 +27,19 @@ void Tile::render(SDL_Renderer *renderer) {
 
 	switch(_type)
 	{
-		case grass:
-			SDL_SetRenderDrawColor(renderer, LIGHT_GREEN);
+		case alive:
+			SDL_SetRenderDrawColor(renderer, PURPLE);
 			break;
-		case water:
-			SDL_SetRenderDrawColor(renderer, LIGHT_BLUE);
+		case dead:
+			SDL_SetRenderDrawColor(renderer, BLACK);
 			break;
 	}
 
 
 
 	SDL_RenderFillRect(renderer, &_rect);
-	SDL_SetRenderDrawColor(renderer, LIGHT_GREY);
-	SDL_RenderDrawRect(renderer, &_rect);
+//	SDL_SetRenderDrawColor(renderer, LIGHT_GREY);
+//	SDL_RenderDrawRect(renderer, &_rect);
 
 }
 
@@ -55,5 +55,19 @@ void Tile::setType(int i) {
 
 types Tile::getType() {
 	return (types)_type;
+}
+
+void Tile::update() {
+	if (_switchState) {
+		_switchState = false;
+		if (_type == alive)
+			_type = dead;
+		else
+			_type = alive;
+	}
+}
+
+void Tile::switchState() {
+	_switchState = true;
 }
 
